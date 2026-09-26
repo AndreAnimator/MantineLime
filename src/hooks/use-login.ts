@@ -27,8 +27,8 @@ export function useLogin() {
         password: values.password,
       });
 
-      if (response.data.authorization) {
-        localStorage.setItem("token", response.data.authorization);
+      if (response.status === 200) {
+        localStorage.setItem("token", response.data.accessToken);
       }
 
       notifications.show({

@@ -36,7 +36,7 @@ api.interceptors.response.use(
 
     const errorMessage =
       error?.response?.data?.message ||
-      "Ocorreu um erro ao se ocmunicar com o servidor.";
+      "Ocorreu um erro ao se comunicar com o servidor.";
 
     notifications.show({
       title: "Erro na requisição",

@@ -14,7 +14,7 @@ import {
   IconUser,
   IconLock,
   IconLogin,
-  IconBuildingStore,
+  IconFeather,
 } from "@tabler/icons-react";
 import type { UseLoginFormType } from "../../hooks/use-login";
 import type { LoginSchema } from "../../schemas/login-schema";
@@ -34,13 +34,8 @@ export const LoginForm: React.FC<LoginFormProps> = ({
 }) => {
   return (
     <Card>
-      <Group
-        justify="center"
-        gap="xs"
-        mb="xs"
-        color="var(--mantine-color-blue-6)"
-      >
-        <IconBuildingStore size={32} color="var(--mantine-color-blue-6)" />
+      <Group justify="center" gap="xs" mb="xs">
+        <IconFeather size={32} color="var(--mantine-color-green-6)" />
         <Title order={2}>MantineLime</Title>
       </Group>
 

@@ -14,7 +14,7 @@ function App() {
   return (
     <>
       <React.StrictMode>
-        <MantineProvider theme={mantineTheme}>
+        <MantineProvider theme={mantineTheme} defaultColorScheme="auto">
           <ModalsProvider>
             <Notifications />
             <BrowserRouter basename={import.meta.env.BASE_URL}>
