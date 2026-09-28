@@ -1,7 +1,7 @@
 import { z } from "zod";
 
 export const PostSchema = z.object({
-  _id: z.string(),
+  id: z.number(),
   title: z.string(),
   body: z.string(),
   tags: z.array(z.string()),
@@ -13,7 +13,7 @@ export const PostSchema = z.object({
   userId: z.number(),
 });
 
-export const PostFormSchema = PostSchema.omit({ _id: true });
+export const PostFormSchema = PostSchema.omit({ id: true });
 
 export type Post = z.infer<typeof PostSchema>;
 export type PostFormValues = z.infer<typeof PostFormSchema>;
