@@ -1,17 +1,29 @@
-import { Card, Container, Group, Stack, Text, Title } from "@mantine/core";
+import {
+  Card,
+  Container,
+  Group,
+  Stack,
+  Text,
+  Title,
+  UnstyledButton,
+} from "@mantine/core";
 import { IconThumbDown, IconThumbUp } from "@tabler/icons-react";
 import React from "react";
+import { Link } from "react-router";
 
 const PostCard: React.FC<{
   title: string;
   body: string;
   likes: number;
   dislikes: number;
-}> = ({ title, body, likes, dislikes }) => (
+  id: number;
+}> = ({ title, body, likes, dislikes, id }) => (
   <Card padding="lg">
     <Stack>
-      <Title>{title}</Title>
-      <Text lineClamp={2}>{body}</Text>
+      <UnstyledButton component={Link} to={`/app/posts/${id}`}>
+        <Title>{title}</Title>
+        <Text lineClamp={2}>{body}</Text>
+      </UnstyledButton>
       <Group>
         <Container>
           <IconThumbUp></IconThumbUp>

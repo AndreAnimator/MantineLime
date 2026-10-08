@@ -20,6 +20,7 @@ const Posts: React.FC<PostsProps> = ({ posts, loadMoreRef, hasMore }) => {
             body={body}
             likes={reactions.likes}
             dislikes={reactions.dislikes}
+            id={id}
           />
         ))}
       </Stack>

@@ -1,36 +1,16 @@
 import React from "react";
-import {
-  Badge,
-  Button,
-  Card,
-  Container,
-  Group,
-  Text,
-  Title,
-} from "@mantine/core";
-import { IconArrowLeft, IconThumbDown, IconThumbUp } from "@tabler/icons-react";
+import { Badge, Card, Container, Group, Text, Title } from "@mantine/core";
+import { IconThumbDown, IconThumbUp } from "@tabler/icons-react";
 import type { Post } from "../../schemas/posts-schema";
 
 interface PostDetailsCardProps {
   post: Post;
-  onDelete: () => void;
-  onNavigateBack: () => void;
 }
 
-export const PostDetailsCard: React.FC<PostDetailsCardProps> = ({
-  post,
-  onNavigateBack,
-}) => {
+export const PostDetailsCard: React.FC<PostDetailsCardProps> = ({ post }) => {
   return (
     <Card>
-      <Group justify="space-between" align="flex-start">
-        <Button
-          variant="outline"
-          leftSection={<IconArrowLeft size={18} />}
-          onClick={onNavigateBack}
-        >
-          Voltar
-        </Button>
+      <Group justify="center" align="flex-start">
         <div>
           <Badge variant="light" color="green" mb="xs">
             Postagem de {post.userId}
@@ -39,7 +19,7 @@ export const PostDetailsCard: React.FC<PostDetailsCardProps> = ({
         </div>
       </Group>
 
-      <Group>
+      <Group justify="center">
         {post.tags.map((tag) => (
           <Badge>{tag}</Badge>
         ))}

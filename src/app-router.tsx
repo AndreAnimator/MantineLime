@@ -5,6 +5,7 @@ import { AuthLayout } from "./layouts/auth-layout";
 import { Login } from "./pages/login";
 import { ProtectedRoute } from "./layouts/protected-route";
 import { Timeline } from "./pages/timeline";
+import { PostDetails } from "./pages/post-details";
 
 export const AppRouter: React.FC = () => {
   return (
@@ -17,6 +18,7 @@ export const AppRouter: React.FC = () => {
 
       <Route path="/app" element={<ProtectedRoute />}>
         <Route index element={<Timeline />} />
+        <Route path="posts/:id" element={<PostDetails />} />
       </Route>
     </Routes>
   );
