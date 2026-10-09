@@ -16,7 +16,7 @@
 
    Usar useEffect com o array de dependências configurado de forma precisa e incluir funções de limpeza (cleanup) quando houver timers, subscrições ou ouvintes de evento.
 
-   `Usei useEffect com array de dependências mas não tenho certeza se inclui funções de limpeza. (tem um finally no hook de login)`
+   `Usei useEffect com array de dependências mas não tenho certeza se inclui funções de limpeza. (tem um finally no hook de login e no use-async-data)`
 
 3. Estado global com Context API e Custom Hooks
 
@@ -56,7 +56,7 @@
 
    Persistir o token JWT no navegador (localStorage ou sessionStorage), sincronizar o status no contexto global e bloquear o acesso à área administrativa para usuários que não estiverem logados.
 
-   `Persisti o token JWT no navegador com localStorage, não bloqueei o acesso a áreas administrativas mas bloqueei o acesso ao aplicativo sem autenticação. Bloqueei o status no contexto global.`
+   `Persisti o token JWT no navegador com localStorage, não bloqueei o acesso a áreas administrativas mas bloqueei o acesso ao aplicativo sem autenticação. Sincronizei o status no contexto global.`
 
 7. Consumo de API REST, interceptors e validação com Zod
 

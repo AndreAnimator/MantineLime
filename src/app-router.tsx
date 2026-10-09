@@ -2,6 +2,7 @@ import type React from "react";
 import { Route, Routes } from "react-router";
 import { Home } from "./pages/home";
 import { AuthLayout } from "./layouts/auth-layout";
+import { RootLayout } from "./layouts/root-layout";
 import { Login } from "./pages/login";
 import { ProtectedRoute } from "./layouts/protected-route";
 import { Timeline } from "./pages/timeline";
@@ -17,8 +18,10 @@ export const AppRouter: React.FC = () => {
       </Route>
 
       <Route path="/app" element={<ProtectedRoute />}>
-        <Route index element={<Timeline />} />
-        <Route path="posts/:id" element={<PostDetails />} />
+        <Route element={<RootLayout />}>
+          <Route index element={<Timeline />} />
+          <Route path="posts/:id" element={<PostDetails />} />
+        </Route>
       </Route>
     </Routes>
   );
