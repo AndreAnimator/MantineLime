@@ -1,3 +1,31 @@
+# Tema Escolhido
+
+Rede social do dummyjson.
+
+# Instruções para rodar localmente
+
+Utilize seu gerenciador de pacotes favorito para instalar as dependências, como:
+
+`npm install`
+ou
+`yarn install`
+
+Depois use `npm run dev` (ou a sua alternativa adequada) e acessa o site em `localhost:5173`.
+
+Para realizar testes, rode ou `npm run test` ou "test:run" para realizar os testes do Vitest,
+    "test:e2e" para testes end to end.
+    "test:e2e:report" para user reports com o playwright.
+
+# Link da aplicação hospedada:
+
+https://mantine-lime.vercel.app/
+
+# Disclaimer de IA
+
+Usei IA para debugar e ajudar a configurar os testes de ponta a ponta e fazer o Vitest rodar também.
+
+# Checklist dos 10 requisitos técnicos
+
 1. Estrutura de componentes e tipagem com TypeScript
 
    Inicializar o projeto com Vite no template React + TypeScript.
@@ -79,15 +107,23 @@
    Escrever testes unitários e de componentes com Vitest e React Testing Library (RTL).
    Priorizar a visão do usuário com consultas acessíveis (getByRole, getByText), simular interações com @testing-library/user-event e isolar dependências com wrappers de contexto em memória.
 
-9. Testes ponta a ponta com Playwright
+   `Fiz só um arquivo de teste para o componente login-form com Vitest e React Testing Library. Usei getByRole e getByTest e user-event. Não tenho certeza se isolei dependências com wrappers de contexto em memória.`
+
+10. Testes ponta a ponta com Playwright
 
    Configurar o Playwright e automatizar pelo menos dois fluxos completos da aplicação em navegador real (por exemplo: fluxo de autenticação com redirecionamento e fluxo de busca, visualização de detalhes ou cadastro de item).
    Usar localizadores semânticos e garantir que os testes rodem com sucesso em modo headless.
 
-10. Pipeline de CI/CD e deploy em produção
+   `Configurei o playwright e automatizei o fluxo de navegação, login e acesso a posts. Garanti que os testes rodassem com sucesso em modo headless.`
+
+11. Pipeline de CI/CD e deploy em produção
 
     Configurar workflows no GitHub Actions (.github/workflows/):
     CI: checkout, setup do Node.js, instalação com lockfile congelado (yarn install --frozen-lockfile) e execução dos testes do Vitest e do Playwright a cada push e pull request.
     CD: build de produção e deploy automatizado no GitHub Pages (certifique-se de que o repositório é público!).
     Ajustar a propriedade base no vite.config.ts e configurar o fallback para rotas de SPA (404.html), garantindo que links diretos e recarregamentos de página funcionem sem erro.
     Ativar regras de proteção para a branch main, exigindo abertura de Pull Request e aprovação nos testes de CI antes de integrar o código.
+
+    `O CI tá completo com a exceção talvez de --frozen-lockfile. Mas há execução de testes a cada push e pull request.`
+
+    `No CD tô realizando o build pelo Vercel com deploy automatizado pelo Github Actions. Ativei regras de proteção para a branch main, exigindo abertura de Pull Request e aprovação nos testes de CI antes de integrar ao código.`
