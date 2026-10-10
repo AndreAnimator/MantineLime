@@ -51,51 +51,53 @@ export const RootLayout: React.FC = () => {
       </AppShell.Header>
       <AppShell.Navbar p="md">
         <AppShell.Section>
-          <Stack w="100%" px="md" justify="center">
-            <Stack>
-              <Burger
-                opened={opened}
-                onClick={toggle}
-                hiddenFrom="sm"
-                size="sm"
-              />
-              <Stack
-                gap="xs"
-                style={{ cursor: "pointer" }}
-                onClick={() => navigate("/app")}
-              >
-                <IconFeather size={26} color="var(--matine-color-green-6)" />
-                <Title order={3}> MantineLime</Title>
+          <Stack justify="center">
+            <Stack w="100%" px="md" justify="center">
+              <Stack>
+                <Burger
+                  opened={opened}
+                  onClick={toggle}
+                  hiddenFrom="sm"
+                  size="sm"
+                />
+                <Stack
+                  gap="xs"
+                  style={{ cursor: "pointer" }}
+                  onClick={() => navigate("/app")}
+                >
+                  <IconFeather size={26} color="var(--matine-color-green-6)" />
+                  <Title order={3}> MantineLime</Title>
+                </Stack>
               </Stack>
             </Stack>
-          </Stack>
-          <Button
-            variant="outline"
-            color="red"
-            size="xs"
-            leftSection={<IconLogout size={16} />}
-            onClick={handleLogout}
-          >
-            Sair
-          </Button>
-          <Stack gap="xs">
-            <RouterNavLink
-              to="/app"
-              end
-              style={{ textDecoration: "none" }}
-              onClick={close}
+            <Button
+              variant="outline"
+              color="red"
+              size="xs"
+              leftSection={<IconLogout size={16} />}
+              onClick={handleLogout}
             >
-              {({ isActive }) => (
-                <MantineNavLink
-                  component="div"
-                  label="Timeline"
-                  leftSection={<IconDashboard size={20} />}
-                  active={isActive}
-                  variant="filled"
-                  style={{ borderRadius: "var(--mantine-radius-md" }}
-                />
-              )}
-            </RouterNavLink>
+              Sair
+            </Button>
+            <Stack gap="xs">
+              <RouterNavLink
+                to="/app"
+                end
+                style={{ textDecoration: "none" }}
+                onClick={close}
+              >
+                {({ isActive }) => (
+                  <MantineNavLink
+                    component="div"
+                    label="Timeline"
+                    leftSection={<IconDashboard size={20} />}
+                    active={isActive}
+                    variant="filled"
+                    style={{ borderRadius: "var(--mantine-radius-md" }}
+                  />
+                )}
+              </RouterNavLink>
+            </Stack>
           </Stack>
         </AppShell.Section>
       </AppShell.Navbar>

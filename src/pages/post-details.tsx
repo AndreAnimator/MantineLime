@@ -28,8 +28,7 @@ export const PostDetails: React.FC = () => {
           icon={<IconAlertCircle size={20} />}
           mb="lg"
         >
-          {error ||
-            `Nenhum produto foi encontrado no sistema com o ID "${id}".`}
+          {error || `Nenhum post foi encontrado no sistema com o ID "${id}".`}
         </Alert>
         <Button
           component={Link}
@@ -51,7 +50,7 @@ export const PostDetails: React.FC = () => {
         variant="subtle"
         leftSection={<IconArrowLeft size={18} />}
       >
-        Voltar para a timelina
+        Voltar para a timeline
       </Button>
 
       <PostDetailsCard post={post} />

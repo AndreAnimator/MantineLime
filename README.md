@@ -36,9 +36,11 @@
 
    Implementar layout com cabeçalho e navegação persistentes, renderizando as páginas filhas via <Outlet />.
 
-   `Implementei layout renderizando páginas filhas via <Outlet />`
+   `Implementei layout renderizando páginas filhas via <Outlet /> e layout com cabeçalho e navegação persistentes.`
 
    Usar navegação declarativa com <NavLink> (com indicação de rota ativa), navegação programática com useNavigate() e rotas dinâmicas capturadas com useParams() (ex: /produtos/:id).
+
+   `Usei navegação declarativa para o navbar com indicação de rota ativa. Usei navegação programática com useNavigate(). Usei rotas dinâmicas capturadas com useParams para exbiir detalhes de posts (posts/:id).`
 
 5. Interface gráfica e formulários com Mantine UI
 

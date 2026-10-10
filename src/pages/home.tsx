@@ -19,7 +19,7 @@ export const Home: React.FC = () => {
           <IconFeather size={48} color="var(--mantine-color-green-6)" />
 
           <Title order={1} ta="center">
-            MatineLime
+            MantineLime
           </Title>
 
           <Text c="dimmed" ta="center" size="lg">

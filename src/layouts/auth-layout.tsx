@@ -5,7 +5,6 @@ import { Container, Box } from "@mantine/core";
 export const AuthLayout: React.FC = () => {
   return (
     <Box
-      bg="gray.1"
       style={{
         minHeight: "100vh",
         display: "flex",

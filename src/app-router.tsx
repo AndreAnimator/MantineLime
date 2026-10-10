@@ -7,6 +7,7 @@ import { Login } from "./pages/login";
 import { ProtectedRoute } from "./layouts/protected-route";
 import { Timeline } from "./pages/timeline";
 import { PostDetails } from "./pages/post-details";
+import { NotFound } from "./pages/not-found";
 
 export const AppRouter: React.FC = () => {
   return (
@@ -23,6 +24,7 @@ export const AppRouter: React.FC = () => {
           <Route path="posts/:id" element={<PostDetails />} />
         </Route>
       </Route>
+      <Route path="*" element={<NotFound />} />
     </Routes>
   );
 };
