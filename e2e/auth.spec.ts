@@ -1,5 +1,18 @@
 import { test, expect } from "@playwright/test";
 
+test.beforeEach(async ({ page }) => {
+  page.on("console", (m) => console.log("[browser]", m.type(), m.text()));
+  page.on("pageerror", (e) => console.log("[pageerror]", e.message));
+  page.on("requestfailed", (r) =>
+    console.log("[requestfailed]", r.url(), r.failure()?.errorText),
+  );
+  page.on("response", async (r) => {
+    if (r.url().includes("/login") || r.url().includes("/auth")) {
+      console.log("[response]", r.status(), r.url());
+    }
+  });
+});
+
 test.describe("Fluxo de autenticação e Login", () => {
   test("deve realizar login com sucesso informando credenciais válidas", async ({
     page,
